@@ -6,6 +6,7 @@ import {CountriesComponent} from './countries.component';
 import {UpdateCountryComponent} from './update-country/update-country.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CreateCountryComponent} from './create-country/create-country.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,7 @@ import {CreateCountryComponent} from './create-country/create-country.component'
         UpdateCountryComponent
     ],
     imports: [
-        CommonModule,
+        BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         CountriesRoutingModule

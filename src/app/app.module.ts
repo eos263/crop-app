@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {LocationStrategy, HashLocationStrategy, CommonModule} from '@angular/common';
 
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
@@ -36,11 +36,14 @@ import { LoadingDataSpinnerModule} from './_shared/loading-data-spinner/loading-
 import { MatPaginatorModule} from '@angular/material/paginator';
 import {ProvinceResolver} from './_resolvers/province-resolver.service';
 import {ProvincesModule} from './_views/provinces/provinces.module';
-import {CreateProvinceComponent} from './_views/provinces/create-province/create-province.component';
-import {ProvincesComponent} from './_views/provinces/provinces.component';
-import {CreateCountryComponent} from './_views/countries/create-country/create-country.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CountriesModule} from './_views/countries/countries.module';
+import { CountryResolver } from './_resolvers/country-resolver.service';
+import { CropsComponent } from './_views/crops/crops/crops.component';
+import { CropsModule as CropsModule } from './_views/crops/crops/cropsmodule';
+import { CropsResolver } from './_resolvers/crops-resolver.service';
+import { CropGradesResolver } from './_resolvers/crop-grades-resolver.service';
+import { CropGradesComponent } from './_views/cropgrades/crop-grades/crop-grades.component';
 // import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
@@ -62,6 +65,7 @@ import {CountriesModule} from './_views/countries/countries.module';
         LoadingDataSpinnerModule,
         ProvincesModule,
         CountriesModule,
+        CropsModule
         // ModalModule.forRoot(),
         // BsDropdownModule.forRoot(),
         // TabsModule.forRoot(),
@@ -69,14 +73,18 @@ import {CountriesModule} from './_views/countries/countries.module';
     ],
     declarations: [
         AppComponent,
-        ...APP_CONTAINERS
+        ...APP_CONTAINERS,
+        CropGradesComponent,
     ],
     providers: [
         {
             provide: LocationStrategy,
             useClass: HashLocationStrategy
         },
-        ProvinceResolver
+        ProvinceResolver,
+        CountryResolver,
+        CropsResolver,
+        CropGradesResolver
     ],
     entryComponents: [
     ],

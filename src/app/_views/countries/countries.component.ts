@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class CountriesComponent implements OnInit {
 
-    countries: Country[] = [];
+    public countries: Country[] = [];
 
     constructor(private router: Router, private countryService: CountryService) { }
 
@@ -21,6 +21,7 @@ export class CountriesComponent implements OnInit {
     getAll() {
         this.countryService.findAll().subscribe((countriesFromBackEnd: Country[]) => {
             this.countries = countriesFromBackEnd;
+            console.log(countriesFromBackEnd, "Countries")
         });
     }
 

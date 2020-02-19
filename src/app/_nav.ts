@@ -5,5 +5,7 @@ export const navItems = [
         }
     },
     { name: 'Countries', url: '/countries', icon: 'fa fa-tasks'},
-    { name: 'Provinces', url: '/provinces', icon: 'fa fa-tasks'}
+    { name: 'Provinces', url: '/provinces', icon: 'fa fa-tasks'},
+    { name: 'Crops', url: '/crops', icon: 'fa fa-tasks'},
+    { name: 'CropGrades', url: '/cropgrades', icon: 'fa fa-tasks'},
 ];
