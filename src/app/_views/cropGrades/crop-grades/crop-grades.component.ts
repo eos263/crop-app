@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CropGrade} from '../../_models/crop-grade';
+import {CropGradeService} from '../../_services/crop-grade.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-crop-grades',
-  templateUrl: './crop-grades.component.html',
-  styleUrls: ['./crop-grades.component.scss']
+    selector: 'app-cropGrades',
+    templateUrl: './cropGrades.component.html',
+    styleUrls: ['./cropGrades.component.css']
 })
-export class CropGradesComponent implements OnInit {
+export class ProvincesComponent implements OnInit {
 
-  constructor() { }
+    cropGrades: CropGrade[] = [];
 
-  ngOnInit(): void {
-  }
+    constructor(
+        private router: Router,
+        private cropGradeService: CropGradeService
+    ) { }
 
+    ngOnInit() {
+        this.findAll();
+    }
+
+    onCreate() {
+        this.router.navigate(['/create-crop-grade']).then();
+    }
+
+    findAll() {
+        this.cropGradeService.findAll().subscribe((cropGradesFromBackEnd: CropGrade[]) => {
+            this.cropGrades = cropGradesFromBackEnd;
+        });
+    }
 }

@@ -7,7 +7,6 @@ import {CropGrade} from '../../../_models/crop-grade';
   templateUrl: './create-crop-grade.component.html',
   styleUrls: ['./create-crop-grade.component.css']
 })
-
 export class CreateCropGradeComponent implements OnInit {
   cropgradeForm: FormGroup;
   cropgrades: CropGrade[] = [];

@@ -1,0 +1,28 @@
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-list"></i> <strong>Crop List</strong>
+            <button class="btn btn-primary active pull-right" type="button" (click)="onCreate()">Add Crop</button>
+        </div>
+            <div class="card-body">
+                <table class="table table-responsive-sm table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let crop of crops; let i = index">
+                        <td scope="row">{{i + 1}}</td>
+                        <td>{{crop.id}}</td>
+                        <td>{{crop.name}}</td>
+            
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>
