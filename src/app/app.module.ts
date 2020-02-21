@@ -16,6 +16,7 @@ import { CreateCropGradeComponent } from './_views/cropGrades/create-crop-grade/
 import { CreateAddressTypeComponent } from './_views/addressTypes/create-address-type/create-address-type.component';
 import { CreateOccupationComponent } from './_views/occupations/create-occupation/create-occupation.component';
 import { CreateIdTypeComponent } from './_views/idTypes/create-id-type/create-id-type.component';
+import { DistrictsComponent } from './_view/districts/districts.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CreateIdTypeComponent } from './_views/idTypes/create-id-type/create-id
     CreateCropGradeComponent,
     CreateAddressTypeComponent,
     CreateOccupationComponent,
-    CreateIdTypeComponent
+    CreateIdTypeComponent,
+    DistrictsComponent
   ],
   imports: [
     FormsModule,
