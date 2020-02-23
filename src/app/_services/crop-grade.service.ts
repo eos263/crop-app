@@ -8,26 +8,26 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class CropGradeService {
 
-    cropGrades: CropGrade[] = [
-        {id: 235253, name:'wtweqt', price: 600, cropVarietyId: 2, cropId:5}
+    cropgrades: CropGrade[] = [
+        {id: 235253, name:'wtweqt', price: 2, cropVarietyId: 2, cropId: 2}
     ];
-    // baseUrl = environment.apiUrl + 'cropGrades';
+    // baseUrl = environment.apiUrl + 'cropgrades';
 
     constructor(private httpClient: HttpClient) {
     }
 
     findAll(): Observable<CropGrade[]> {
-        // return this.httpClient.get<Province[]>(this.baseUrl).pipe(
-        //     map(provinces => {
-        //         return provinces;
+        // return this.httpClient.get<CropGrade[]>(this.baseUrl).pipe(
+        //     map(cropgrades => {
+        //         return cropgrades;
         //     })
         // );
-        return of(this.cropGrades);
+        return of(this.cropgrades);
     }
 
     save(cropgrade: CropGrade): Observable<CropGrade> {
         // return this.httpClient.post<CropGrade>(this.baseUrl, cropgrade);
-        this.cropGrades.push(cropgrade);
+        this.cropgrades.push(cropgrade);
         return of(cropgrade);
     }
 }

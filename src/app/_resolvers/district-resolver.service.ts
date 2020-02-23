@@ -2,8 +2,9 @@ import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import { District } from './_models/district';
-import { DistrictService } from './_services/district.service';
+import { District } from '../_models/district';
+import { DistrictService } from '../_services/district.service';
+
 
 @Injectable()
 export class DistrictResolver  implements Resolve<District[]> {

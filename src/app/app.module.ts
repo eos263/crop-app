@@ -1,46 +1,124 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgModule} from '@angular/core';
+import {LocationStrategy, HashLocationStrategy, CommonModule} from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CreateProvinceComponent } from './_views/provinces/create-province/create-province.component';
+import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+import {PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
+import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+    suppressScrollX: true
+};
+
+import {AppComponent} from './app.component';
+
+import {DefaultLayoutComponent} from './containers';
+
+const APP_CONTAINERS = [
+    DefaultLayoutComponent
+];
+
+import {
+    AppAsideModule,
+    AppBreadcrumbModule,
+    AppHeaderModule,
+    AppFooterModule,
+    AppSidebarModule,
+} from '@coreui/angular';
+
+import { AppRoutingModule} from './app.routing';
+// import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
+// import { TabsModule} from 'ngx-bootstrap/tabs';
+import { HttpClientModule} from '@angular/common/http';
+// import { BsDatepickerModule, ModalModule} from 'ngx-bootstrap';
+import { LoadingDataSpinnerModule} from './_shared/loading-data-spinner/loading-data-spinner.module';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import {ProvinceResolver} from './_resolvers/province-resolver.service';
+import {ProvincesModule} from './_views/provinces/provinces.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { CreateWardComponent } from './_views/wards/create-ward/create-ward.component';
-import { RouterModule } from '@angular/router';
-import { CreateCountryComponent } from './_views/countries/create-country/create-country.component';
-import { CreateDistrictComponent } from './_views/districts/create-district/create-district.component';
-import { CreateTownComponent } from './_views/towns/create-town/create-town.component';
-import { CreateCropComponent } from './_views/crops/create-crop/create-crop.component';
-import { CreateCropVarietyComponent } from './_views/cropVarieties/create-crop-variety/create-crop-variety.component';
-import { CreateCropGradeComponent } from './_views/cropGrades/create-crop-grade/create-crop-grade.component';
-import { CreateAddressTypeComponent } from './_views/addressTypes/create-address-type/create-address-type.component';
-import { CreateOccupationComponent } from './_views/occupations/create-occupation/create-occupation.component';
-import { CreateIdTypeComponent } from './_views/idTypes/create-id-type/create-id-type.component';
-import { DistrictsComponent } from './_view/districts/districts.component';
+import {CountriesModule} from './_views/countries/countries.module';
+import { CountryResolver } from './_resolvers/country-resolver.service';
+import { CropGradesComponent } from './_views/cropGrades/create-crop-grade/crop-grades.component';
+import { CropResolver } from './_resolvers/crop-resolver.service';
+import { CropGradeResolver } from './_resolvers/crop-grade-resolver.service';
+import { DistrictResolver } from './_resolvers/district-resolver.service';
+import { WardResolver } from './_resolvers/ward-resolver.service';
+import { TownResolver } from './_resolvers/town-resolver.service';
+import { OccupationResolver } from './_resolvers/occupation-resolver.service';
+import { CropVarietyResolver } from './_resolvers/crop-variety-resolver.service';
+import { DistrictsModule } from './_views/districts/districts.module';
+import { TownsModule } from './_views/towns/towns.module';
+import { OccupationsModule } from './_views/occupations/occupations.module';
+import { WardsModule } from './_views/wards/wards.module';
+import { CropGradesModule } from './_views/cropGrades/create-crop-grade/crop-grades.module';
+import { CropVarietiesModule } from './_views/cropVarieties/create-crop-variety/crop-variety.module';
+import { AddressTypesModule } from './_views/addressTypes/address-types.module';
+import { IdTypesModule } from './_views/idTypes/id-types.module';
+import { IdTypeResolver } from './_resolvers/id-type-resolver.service';
+import { AddressTypeResolver } from './_resolvers/address-type-resolver.service';
+import { CropsModule } from './_views/crops/crops.module';
+
+// import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CreateProvinceComponent,
-    CreateWardComponent,
-    CreateCountryComponent,
-    CreateDistrictComponent,
-    CreateTownComponent,
-    CreateCropComponent,
-    CreateCropVarietyComponent,
-    CreateCropGradeComponent,
-    CreateAddressTypeComponent,
-    CreateOccupationComponent,
-    CreateIdTypeComponent,
-    DistrictsComponent
-  ],
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        AppAsideModule,
+        // BsDatepickerModule.forRoot(),
+        AppBreadcrumbModule.forRoot(),
+        AppFooterModule,
+        AppHeaderModule,
+        AppSidebarModule,
+        HttpClientModule,
+        MatPaginatorModule,
+        PerfectScrollbarModule,
+        LoadingDataSpinnerModule,
+        ProvincesModule,
+        CountriesModule,
+        CropsModule,
+        DistrictsModule,
+        TownsModule,
+        OccupationsModule,
+        WardsModule,
+        CropGradesModule,
+        CropVarietiesModule,
+        AddressTypesModule,
+        IdTypesModule,
+        
+        // ModalModule.forRoot(),
+        // BsDropdownModule.forRoot(),
+        // TabsModule.forRoot(),
+        // PaginationModule.forRoot()
+    ],
+    declarations: [
+        AppComponent,
+        ...APP_CONTAINERS,
+    
+    ],
+    providers: [
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
+        },
+        ProvinceResolver,
+        CountryResolver,
+        CropResolver,
+        CropGradeResolver,
+        DistrictResolver,
+        WardResolver,
+        TownResolver,
+        OccupationResolver,
+        CropVarietyResolver,
+        AddressTypeResolver,
+        IdTypeResolver
+    ],
+    entryComponents: [
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

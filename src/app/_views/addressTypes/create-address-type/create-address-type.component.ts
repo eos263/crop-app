@@ -28,6 +28,8 @@ submit(){
 const addressType: AddressType = new AddressType();
 addressType.name = this.addressTypeForm.value.name;
 this.addresstypes.push(addressType);
+
+
 console.log(this.addresstypes);
 }
 }

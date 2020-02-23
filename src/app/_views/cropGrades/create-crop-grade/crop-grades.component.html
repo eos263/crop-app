@@ -1,3 +1,4 @@
+<p>crop-grades works!</p>
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
@@ -12,18 +13,18 @@
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
-                        <th scope="col">cropVarietyId</th>
-                        <th scope="col">CropId</th>
+                        <th scope="col">Crop Variety Id</th>
+                        <th scope="col">Crop Id</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let cropG of cropGrades; let i = index">
+                    <tr *ngFor="let crop-grade of cropgrades; let i = index">
                         <td scope="row">{{i + 1}}</td>
-                        <td>{{cropGrade.id}}</td>
-                        <td>{{cropGrade.name}}</td>
-                        <td>{{cropGrade.price}}</td>
-                        <td>{{cropGrade.cropVarietyId}}</td>
-                        <td>{{cropGrade.CropId}}</td>
+                        <td>{{crop-grade.id}}</td>
+                        <td>{{crop-grade.name}}</td>
+                        <td>{{crop-grade.price}}</td>
+                        <td>{{crop-grade.cropVarietyId}}</td>
+                        <td>{{crop-grade.cropId}}</td>
                     </tr>
                     </tbody>
                 </table>

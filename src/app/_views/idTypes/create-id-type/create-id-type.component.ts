@@ -27,8 +27,8 @@ passportNo:['']
 
 submit(){
   const idtypes: IdTypes = new IdTypes();
-    idtypes.natIdNo = this.idTypeForm.value.wardNo;
-    idtypes.passportNo = this.idTypeForm.value.districtId;
+    idtypes.natIdNo = this.idTypeForm.value.natIdNo;
+    idtypes.passportNo = this.idTypeForm.value.passportNo;
     this.idtypes.push(idtypes);
 
     console.log(this.idtypes);
