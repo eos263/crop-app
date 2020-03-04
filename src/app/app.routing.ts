@@ -11,9 +11,14 @@ import { TownsComponent } from './_views/towns/towns.component';
 import { CropGradesComponent } from './_views/cropGrades/create-crop-grade/crop-grades.component';
 import { OccupationsComponent } from './_views/occupations/occupations.component';
 import { AddressTypesComponent } from './_views/addressTypes/address-types.component';
+import {BuyersComponent} from './_views/buyers/buyers.component';
+import {VendorsComponent} from './_views/vendors/vendors.component';
+
 
 import {ProvinceResolver} from './_resolvers/province-resolver.service';
 import { CountryResolver } from './_resolvers/country-resolver.service';
+import { VendorResolver } from './_resolvers/vendor-resolver.service';
+import { BuyerResolver } from './_resolvers/buyer-resolver.service';
 import { CropResolver } from './_resolvers/crop-resolver.service';
 import { CropGradeResolver } from './_resolvers/crop-grade-resolver.service';
 import { OccupationResolver } from './_resolvers/occupation-resolver.service';
@@ -26,6 +31,7 @@ import { AddressTypeResolver } from './_resolvers/address-type-resolver.service'
 
 import { CreateCropComponent } from './_views/crops/create-crop/create-crop.component';
 import {CreateProvinceComponent} from './_views/provinces/create-province/create-province.component';
+import {CreateBuyerComponent} from './_views/buyers/create-buyer/create-buyer.component';
 import {CreateCountryComponent} from './_views/countries/create-country/create-country.component';
 import { CreateCropGradeComponent } from './_views/cropGrades/create-crop-grade/create-crop-grade.component';
 import { CreateCropVarietyComponent } from './_views/cropVarieties/create-crop-variety/create-crop-variety.component';
@@ -38,6 +44,7 @@ import { IdTypesComponent } from './_views/idTypes/id-types.component';
 import { IdTypeResolver } from './_resolvers/id-type-resolver.service';
 import { CreateIdTypeComponent } from './_views/idTypes/create-id-type/create-id-type.component';
 import { CropsComponent } from './_views/crops/crops.component';
+import { CreateVendorComponent } from './_views/vendors/create-vendor/create-vendor.component';
 
 
 
@@ -53,6 +60,8 @@ export const routes: Routes = [
                 loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
             },
             { path: 'provinces', component: ProvincesComponent, resolve: { provincesData: ProvinceResolver }},
+            { path: 'buyers', component: BuyersComponent, resolve: { provincesData: BuyerResolver }},
+            { path: 'vendors', component: VendorsComponent, resolve: { provincesData: VendorResolver }},
             { path: 'countries', component: CountriesComponent, resolve: { countriesData: CountryResolver }},
             { path: 'crops', component: CropsComponent, resolve: { cropsData: CropResolver }},
             { path: 'occupations', component: OccupationsComponent, resolve: { occupationsData: OccupationResolver }},
@@ -74,6 +83,10 @@ export const routes: Routes = [
             { path: 'create-occupation', component: CreateOccupationComponent },
             { path: 'create-district', component: CreateDistrictComponent },
             { path: 'create-ward', component: CreateWardComponent },
+            { path: 'create-buyer', component: CreateBuyerComponent },
+            { path: 'create-vendor', component: CreateVendorComponent },
+        
+        
         
            
 

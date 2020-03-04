@@ -7,6 +7,7 @@ import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
 import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
 };
@@ -35,6 +36,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { LoadingDataSpinnerModule} from './_shared/loading-data-spinner/loading-data-spinner.module';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import {ProvinceResolver} from './_resolvers/province-resolver.service';
+import {BuyerResolver} from './_resolvers/buyer-resolver.service';
 import {ProvincesModule} from './_views/provinces/provinces.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CountriesModule} from './_views/countries/countries.module';
@@ -58,6 +60,9 @@ import { IdTypesModule } from './_views/idTypes/id-types.module';
 import { IdTypeResolver } from './_resolvers/id-type-resolver.service';
 import { AddressTypeResolver } from './_resolvers/address-type-resolver.service';
 import { CropsModule } from './_views/crops/crops.module';
+import { BuyersModule } from './_views/buyers/buyers.module';
+import { VendorsModule } from './_views/vendors/vendors.module';
+import { VendorResolver } from './_resolvers/vendor-resolver.service';
 
 // import { PaginationModule } from 'ngx-bootstrap/pagination';
 
@@ -79,6 +84,8 @@ import { CropsModule } from './_views/crops/crops.module';
         PerfectScrollbarModule,
         LoadingDataSpinnerModule,
         ProvincesModule,
+        BuyersModule,
+        VendorsModule,
         CountriesModule,
         CropsModule,
         DistrictsModule,
@@ -98,6 +105,7 @@ import { CropsModule } from './_views/crops/crops.module';
     declarations: [
         AppComponent,
         ...APP_CONTAINERS,
+
     
     ],
     providers: [
@@ -106,6 +114,8 @@ import { CropsModule } from './_views/crops/crops.module';
             useClass: HashLocationStrategy
         },
         ProvinceResolver,
+        BuyerResolver, 
+        VendorResolver,
         CountryResolver,
         CropResolver,
         CropGradeResolver,

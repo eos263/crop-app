@@ -1,0 +1,71 @@
+<form [formGroup]="vendorForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="orgName">Organisation Name</label>
+        <input type="text" class="form-control" id="orgName" placeholder="Organisation Name">
+      </div>
+
+    <div class="form-group">
+        <label for="telNo">Organisation Telephone</label>
+        <input type="number" class="form-control" id="telNo" placeholder="Organisation Telephone">
+      </div>
+
+     <div class="form-group">
+      <label for="incorpRegNo">Incorporation Reg Number</label>
+      <input type="number" class="form-control" id="incorpRegNo" placeholder="Incorporation Reg Number">
+    </div>
+
+    <div class="form-group">
+      <label for="orgEmail">Organisation Email</label>
+      <input type="email" class="form-control" id="orgEmail" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+        <label for="contactName">Contact Person Name</label>
+        <input type="text" class="form-control" id="contactName" placeholder="Contact Person Name">
+      </div>
+    
+    <div class="form-group">
+        <label for="accNo">Account Number</label>
+        <input type="number" class="form-control" id="accNo" placeholder="Account Number">
+      </div>
+
+    <div class="form-group">
+        <label for="idNo">ID No.</label>
+        <input type="number" class="form-control" id="idNo" placeholder="ID Number">
+      </div>
+    
+    <div class="form-group">
+        <label for="physicalAdd">Physical Address</label>
+        <input type="text" class="form-control" id="physicalAdd" placeholder="Physical Address">
+      </div>
+    
+    <div class="form-group">
+        <label for="bankName">Bank Name </label>
+        <input type="text" class="form-control" id="bankName" placeholder="Bank Name">
+      </div>
+
+    <div class="form-group">
+        <label for="idType">Id Type</label>
+        <select form="form-group" id="idType">
+          <option value="national id">National ID</option>
+          <option>Passport</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="addressProofType">Address Proof Type</label>
+        <select form="form-group" id="addressProofType">
+          <option>Physical Address</option>
+          <option>Postal Address</option>
+          <option>Rural Address</option>
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </div>
+    </div>
+    </form>
+
