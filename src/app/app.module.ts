@@ -41,7 +41,6 @@ import {ProvincesModule} from './_views/provinces/provinces.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CountriesModule} from './_views/countries/countries.module';
 import { CountryResolver } from './_resolvers/country-resolver.service';
-import { CropGradesComponent } from './_views/cropGrades/create-crop-grade/crop-grades.component';
 import { CropResolver } from './_resolvers/crop-resolver.service';
 import { CropGradeResolver } from './_resolvers/crop-grade-resolver.service';
 import { DistrictResolver } from './_resolvers/district-resolver.service';
@@ -63,6 +62,8 @@ import { CropsModule } from './_views/crops/crops.module';
 import { BuyersModule } from './_views/buyers/buyers.module';
 import { VendorsModule } from './_views/vendors/vendors.module';
 import { VendorResolver } from './_resolvers/vendor-resolver.service';
+import { DepotsModule } from './_views/depots/depots.module';
+import { DepotResolver } from './_resolvers/depot-resolver.service';
 
 // import { PaginationModule } from 'ngx-bootstrap/pagination';
 
@@ -86,6 +87,7 @@ import { VendorResolver } from './_resolvers/vendor-resolver.service';
         ProvincesModule,
         BuyersModule,
         VendorsModule,
+        DepotsModule,
         CountriesModule,
         CropsModule,
         DistrictsModule,
@@ -105,6 +107,7 @@ import { VendorResolver } from './_resolvers/vendor-resolver.service';
     declarations: [
         AppComponent,
         ...APP_CONTAINERS,
+        
 
     
     ],
@@ -116,6 +119,7 @@ import { VendorResolver } from './_resolvers/vendor-resolver.service';
         ProvinceResolver,
         BuyerResolver, 
         VendorResolver,
+        DepotResolver,
         CountryResolver,
         CropResolver,
         CropGradeResolver,

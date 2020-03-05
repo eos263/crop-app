@@ -8,6 +8,7 @@ export const navItems = [
     { name: 'Provinces', url: '/provinces', icon: 'fa fa-tasks'},
     { name: 'Buyers', url: '/buyers', icon: 'fa fa-tasks'},
     { name: 'Vendors', url: '/vendors', icon: 'fa fa-tasks'},
+    { name: 'Depots', url: '/depots', icon: 'fa fa-tasks'},
     { name: 'Crops', url: '/crops', icon: 'fa fa-tasks'},
     { name: 'Districts', url: '/districts', icon: 'fa fa-tasks'},
     { name: 'Towns', url: '/towns', icon: 'fa fa-tasks'},

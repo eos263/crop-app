@@ -1,0 +1,28 @@
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-list"></i> <strong>District List</strong>
+            <button class="btn btn-primary active pull-right" type="button" (click)="onCreate()">Add Depot</button>
+        </div>
+            <div class="card-body">
+                <table class="table table-responsive-sm table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">District Id</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let district of districts; let i = index">
+                        <td scope="row">{{i + 1}}</td>
+                        <td>{{depot.id}}</td>
+                        <td>{{depot.name}}</td>
+                        <td>{{depot.districtId}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>

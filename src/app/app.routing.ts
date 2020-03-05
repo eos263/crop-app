@@ -12,6 +12,7 @@ import { CropGradesComponent } from './_views/cropGrades/create-crop-grade/crop-
 import { OccupationsComponent } from './_views/occupations/occupations.component';
 import { AddressTypesComponent } from './_views/addressTypes/address-types.component';
 import {BuyersComponent} from './_views/buyers/buyers.component';
+import { DepotsComponent } from './_views/depots/depots.component';
 import {VendorsComponent} from './_views/vendors/vendors.component';
 
 
@@ -26,6 +27,8 @@ import { DistrictResolver } from './_resolvers/district-resolver.service';
 import { WardResolver } from './_resolvers/ward-resolver.service';
 import { TownResolver } from './_resolvers/town-resolver.service';
 import { CropVarietyResolver } from './_resolvers/crop-variety-resolver.service';
+import { DepotResolver } from './_resolvers/depot-resolver.service';
+import { IdTypeResolver } from './_resolvers/id-type-resolver.service';
 import { AddressTypeResolver } from './_resolvers/address-type-resolver.service';
 
 
@@ -41,10 +44,10 @@ import { CreateDistrictComponent } from './_views/districts/create-district/crea
 import { CreateWardComponent } from './_views/wards/create-ward/create-ward.component';
 import { CreateAddressTypeComponent } from './_views/addressTypes/create-address-type/create-address-type.component';
 import { IdTypesComponent } from './_views/idTypes/id-types.component';
-import { IdTypeResolver } from './_resolvers/id-type-resolver.service';
 import { CreateIdTypeComponent } from './_views/idTypes/create-id-type/create-id-type.component';
 import { CropsComponent } from './_views/crops/crops.component';
 import { CreateVendorComponent } from './_views/vendors/create-vendor/create-vendor.component';
+import { CreateDepotComponent } from './_views/depots/create-depot/create-depot.component';
 
 
 
@@ -61,6 +64,7 @@ export const routes: Routes = [
             },
             { path: 'provinces', component: ProvincesComponent, resolve: { provincesData: ProvinceResolver }},
             { path: 'buyers', component: BuyersComponent, resolve: { provincesData: BuyerResolver }},
+            { path: 'depots', component: DepotsComponent, resolve: { provincesData: DepotResolver }},
             { path: 'vendors', component: VendorsComponent, resolve: { provincesData: VendorResolver }},
             { path: 'countries', component: CountriesComponent, resolve: { countriesData: CountryResolver }},
             { path: 'crops', component: CropsComponent, resolve: { cropsData: CropResolver }},
@@ -85,6 +89,7 @@ export const routes: Routes = [
             { path: 'create-ward', component: CreateWardComponent },
             { path: 'create-buyer', component: CreateBuyerComponent },
             { path: 'create-vendor', component: CreateVendorComponent },
+            { path: 'create-depot', component: CreateDepotComponent },
         
         
         
