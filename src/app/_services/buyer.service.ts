@@ -9,8 +9,8 @@ import {map} from 'rxjs/operators';
 export class BuyerService {
 
   buyers: Buyer[] = [
-        { id: 1, 
-          buyerName: 'Shazz', 
+        { id: 1,
+          buyerName: 'Shazz',
           TelNo: 8888999,
           incorpRegNo: 2009,
           Email: 'vshaz@gmail.com',

@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class AddressTypeService {
 
   addresstypes: AddressType[] = [
-        {id: 235253, name:'qwerty'}
+        {id: 235253, name: 'qwerty'}
     ];
     // baseUrl = environment.apiUrl + 'addresstypes';
 

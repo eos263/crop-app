@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class OccupationService {
 
     occupations: Occupation[] = [
-        {id: 235253, name:'wtweqt'}
+        {id: 235253, name: 'wtweqt'}
     ];
     // baseUrl = environment.apiUrl + 'occupations';
 

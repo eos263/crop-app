@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class CropGradeService {
 
     cropgrades: CropGrade[] = [
-        {id: 235253, name:'wtweqt', price: 2, cropVarietyId: 2, cropId: 2}
+        {id: 235253, name: 'wtweqt', price: 2, cropVarietyId: 2, cropId: 2}
     ];
     // baseUrl = environment.apiUrl + 'cropgrades';
 

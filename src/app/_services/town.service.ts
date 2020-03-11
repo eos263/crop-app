@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class TownService {
 
     towns: Town[] = [
-        {id: 235253, name:'wtweqt',  provinceId: 2,  countryId: 2,}
+        {id: 235253, name: 'wtweqt',  provinceId: 2,  countryId: 2,}
     ];
     // baseUrl = environment.apiUrl + 'provinces';
 

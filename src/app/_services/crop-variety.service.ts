@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class CropVarietyService {
 
     cropvarieties: CropVariety[] = [
-        {id: 235253, name:'wtweqt', cropId: 2}
+        {id: 235253, name: 'wtweqt', cropId: 2}
     ];
     // baseUrl = environment.apiUrl + 'cropvarieties';
 

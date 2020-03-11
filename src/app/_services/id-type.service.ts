@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class IdTypesService {
 
     idtypes: IdTypes[] = [
-        {id: 20, natIdNo:'05-117945 A 05', passportNo: 'BN886074'}
+        {id: 20, name: 'BN886074'}
     ];
     // baseUrl = environment.apiUrl + 'idtypes';
 

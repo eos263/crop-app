@@ -8,9 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class ProvinceService {
 
-    provinces: Province[] = [
-        {id: 235253, countryId: 2, name:'wtweqt'}
-    ];
+    provinces: Province[] = [];
     // baseUrl = environment.apiUrl + 'provinces';
 
     constructor(private httpClient: HttpClient) {

@@ -10,7 +10,7 @@ import { Crop } from '../_models/crop';
 export class CropService {
 
     crops: Crop[] = [
-        {id: 10,  name:'Crop 1'}
+        {id: 10,  name: 'Crop 1'}
     ];
     // baseUrl = environment.apiUrl + 'provinces';
 

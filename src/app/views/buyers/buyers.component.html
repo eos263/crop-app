@@ -1,0 +1,47 @@
+<p>buyers works!</p>
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-list"></i> <strong>Buyers List</strong>
+            <button class="btn btn-primary active pull-right" type="button" (click)="onCreate()">Add Buyer</button>
+        </div>
+            <div class="card-body">
+                <table class="table table-responsive-sm table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col"> Buyer Name</th>
+                        <th scope="col">Telephone No.</th>
+                        <th scope="col">Incorporation Reg No.</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Contact Person Name</th>
+                        <th scope="col">Account No.</th>
+                        <th scope="col">ID No.</th>
+                        <th scope="col">Physical Address</th>
+                        <th scope="col">Bank Name</th>
+                        <th scope="col">ID Type</th>
+                        <th scope="col">Address Proof Type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let buyer of buyers; let i = index">
+                        <td scope="row">{{i + 1}}</td>
+                        <td>{{buyer.id}}</td>
+                        <td>{{buyer.buyerName}}</td>
+                        <td>{{buyer.TelNo}}</td>
+                        <td>{{buyer.incorpRegNo}}</td>
+                        <td>{{buyer.Email}}</td>
+                        <td>{{buyer.contactPersonName}}</td>
+                        <td>{{buyer.accNo}}</td>
+                        <td>{{buyer.idNo}}</td>
+                        <td>{{buyer.physicalAddress}}</td>
+                        <td>{{buyer.bankName}}</td>
+                        <td>{{buyer.idType}}</td>
+                        <td>{{buyer.addressProofType}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>

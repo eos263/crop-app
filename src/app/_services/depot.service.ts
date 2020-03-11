@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment.prod';
 import {HttpClient} from '@angular/common/http';
-import {Depot} from '../_models/depot';
 import {Observable, of} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {Depot} from '../_models/depot';
 
 @Injectable({ providedIn: 'root' })
 export class DepotService {
 
   depots: Depot[] = [
-        {id: 235253, name:'wtweqt', districtId: 2}
+        {id: 235253, name: 'wtweqt', districtId: 2}
     ];
     // baseUrl = environment.apiUrl + 'depots';
 

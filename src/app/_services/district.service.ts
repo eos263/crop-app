@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class DistrictService {
 
     districts: District[] = [
-        {id: 235253, name:'wtweqt', townId: 2, provinceId: 2, countryId: 2}
+        { id: 235253, name: 'wtweqt', townId: 2, provinceId: 2, countryId: 2 }
     ];
     // baseUrl = environment.apiUrl + 'districts';
 

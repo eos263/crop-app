@@ -2,54 +2,35 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {DefaultLayoutComponent} from './containers';
-import {ProvincesComponent} from './_views/provinces/provinces.component';
-import {CountriesComponent} from './_views/countries/countries.component';
-import { CropVarietyComponent } from './_views/cropVarieties/create-crop-variety/crop-variety.component';
-import { DistrictsComponent } from './_views/districts/districts.component';
-import { WardsComponent } from './_views/wards/wards.component';
-import { TownsComponent } from './_views/towns/towns.component';
-import { CropGradesComponent } from './_views/cropGrades/create-crop-grade/crop-grades.component';
-import { OccupationsComponent } from './_views/occupations/occupations.component';
-import { AddressTypesComponent } from './_views/addressTypes/address-types.component';
-import {BuyersComponent} from './_views/buyers/buyers.component';
-import { DepotsComponent } from './_views/depots/depots.component';
-import {VendorsComponent} from './_views/vendors/vendors.component';
-
-
+import {ProvincesComponent} from './views/provinces/provinces.component';
 import {ProvinceResolver} from './_resolvers/province-resolver.service';
-import { CountryResolver } from './_resolvers/country-resolver.service';
-import { VendorResolver } from './_resolvers/vendor-resolver.service';
-import { BuyerResolver } from './_resolvers/buyer-resolver.service';
-import { CropResolver } from './_resolvers/crop-resolver.service';
-import { CropGradeResolver } from './_resolvers/crop-grade-resolver.service';
-import { OccupationResolver } from './_resolvers/occupation-resolver.service';
-import { DistrictResolver } from './_resolvers/district-resolver.service';
-import { WardResolver } from './_resolvers/ward-resolver.service';
-import { TownResolver } from './_resolvers/town-resolver.service';
-import { CropVarietyResolver } from './_resolvers/crop-variety-resolver.service';
-import { DepotResolver } from './_resolvers/depot-resolver.service';
-import { IdTypeResolver } from './_resolvers/id-type-resolver.service';
-import { AddressTypeResolver } from './_resolvers/address-type-resolver.service';
-
-
-import { CreateCropComponent } from './_views/crops/create-crop/create-crop.component';
-import {CreateProvinceComponent} from './_views/provinces/create-province/create-province.component';
-import {CreateBuyerComponent} from './_views/buyers/create-buyer/create-buyer.component';
-import {CreateCountryComponent} from './_views/countries/create-country/create-country.component';
-import { CreateCropGradeComponent } from './_views/cropGrades/create-crop-grade/create-crop-grade.component';
-import { CreateCropVarietyComponent } from './_views/cropVarieties/create-crop-variety/create-crop-variety.component';
-import { CreateTownComponent } from './_views/towns/create-town/create-town.component';
-import { CreateOccupationComponent } from './_views/occupations/create-occupation/create-occupation.component';
-import { CreateDistrictComponent } from './_views/districts/create-district/create-district.component';
-import { CreateWardComponent } from './_views/wards/create-ward/create-ward.component';
-import { CreateAddressTypeComponent } from './_views/addressTypes/create-address-type/create-address-type.component';
-import { IdTypesComponent } from './_views/idTypes/id-types.component';
-import { CreateIdTypeComponent } from './_views/idTypes/create-id-type/create-id-type.component';
-import { CropsComponent } from './_views/crops/crops.component';
-import { CreateVendorComponent } from './_views/vendors/create-vendor/create-vendor.component';
-import { CreateDepotComponent } from './_views/depots/create-depot/create-depot.component';
-
-
+import {CreateProvinceComponent} from './views/provinces/create-province/create-province.component';
+import {CreateCountryComponent} from './views/countries/create-country/create-country.component';
+import {CountriesComponent} from './views/countries/countries.component';
+import {VendorsComponent} from './views/vendors/vendors.component';
+import {DepotsComponent} from './views/depots/depots.component';
+import {BuyersComponent} from './views/buyers/buyers.component';
+import {CropsComponent} from './views/crops/crops.component';
+import {OccupationsComponent} from './views/occupations/occupations.component';
+import {DistrictsComponent} from './views/districts/districts.component';
+import {WardsComponent} from './views/wards/wards.component';
+import {TownsComponent} from './views/towns/towns.component';
+import {CropGradesComponent} from './views/crop-grades/create-crop-grade/crop-grades.component';
+import {CropVarietyComponent} from './views/crop-varieties/create-crop-variety/crop-variety.component';
+import {AddressTypesComponent} from './views/address-types/address-types.component';
+import {IdTypesComponent} from './views/id-types/id-types.component';
+import {CreateCropComponent} from './views/crops/create-crop/create-crop.component';
+import {CreateCropGradeComponent} from './views/crop-grades/create-crop-grade/create-crop-grade.component';
+import {CreateCropVarietyComponent} from './views/crop-varieties/create-crop-variety/create-crop-variety.component';
+import {CreateIdTypeComponent} from './views/id-types/create-id-type/create-id-type.component';
+import {CreateAddressTypeComponent} from './views/address-types/create-address-type/create-address-type.component';
+import {CreateTownComponent} from './views/towns/create-town/create-town.component';
+import {CreateOccupationComponent} from './views/occupations/create-occupation/create-occupation.component';
+import {CreateDistrictComponent} from './views/districts/create-district/create-district.component';
+import {CreateWardComponent} from './views/wards/create-ward/create-ward.component';
+import {CreateBuyerComponent} from './views/buyers/create-buyer/create-buyer.component';
+import {CreateVendorComponent} from './views/vendors/create-vendor/create-vendor.component';
+import {CreateDepotComponent} from './views/depots/create-depot/create-depot.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full', },
@@ -62,20 +43,23 @@ export const routes: Routes = [
                 path: 'dashboard',
                 loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
             },
-            { path: 'provinces', component: ProvincesComponent, resolve: { provincesData: ProvinceResolver }},
-            { path: 'buyers', component: BuyersComponent, resolve: { provincesData: BuyerResolver }},
-            { path: 'depots', component: DepotsComponent, resolve: { provincesData: DepotResolver }},
-            { path: 'vendors', component: VendorsComponent, resolve: { provincesData: VendorResolver }},
-            { path: 'countries', component: CountriesComponent, resolve: { countriesData: CountryResolver }},
-            { path: 'crops', component: CropsComponent, resolve: { cropsData: CropResolver }},
-            { path: 'occupations', component: OccupationsComponent, resolve: { occupationsData: OccupationResolver }},
-            { path: 'districts', component: DistrictsComponent, resolve: { districtsData: DistrictResolver }},
-            { path: 'wards', component: WardsComponent, resolve: { wardsData: WardResolver }},
-            { path: 'towns', component: TownsComponent, resolve: { townsData: TownResolver }},
-            { path: 'cropgrades', component: CropGradesComponent, resolve: { cropGradeData: CropGradeResolver }},
-            { path: 'cropvarieties', component: CropVarietyComponent, resolve: { cropVarietyData: CropVarietyResolver }},
-            { path: 'addresstypes', component: AddressTypesComponent, resolve: { addressTypeData: AddressTypeResolver }},
-            { path: 'idtypes', component: IdTypesComponent, resolve: { idTypeData: IdTypeResolver }},
+            { path: 'provinces', component: ProvincesComponent, resolve: { provincesData: ProvinceResolver } },
+            { path: 'create-province', component: CreateProvinceComponent },
+            { path: 'create-country', component: CreateCountryComponent },
+            { path: 'countries', component: CountriesComponent },
+            { path: 'buyers', component: BuyersComponent },
+            { path: 'depots', component: DepotsComponent },
+            { path: 'vendors', component: VendorsComponent },
+            { path: 'countries', component: CountriesComponent },
+            { path: 'crops', component: CropsComponent },
+            { path: 'occupations', component: OccupationsComponent },
+            { path: 'districts', component: DistrictsComponent },
+            { path: 'wards', component: WardsComponent },
+            { path: 'towns', component: TownsComponent },
+            { path: 'crop-grades', component: CropGradesComponent },
+            { path: 'crop-varieties', component: CropVarietyComponent },
+            { path: 'address-types', component: AddressTypesComponent },
+            { path: 'id-types', component: IdTypesComponent },
             { path: 'create-province', component: CreateProvinceComponent },
             { path: 'create-crop', component: CreateCropComponent },
             { path: 'create-country', component: CreateCountryComponent },
@@ -90,11 +74,6 @@ export const routes: Routes = [
             { path: 'create-buyer', component: CreateBuyerComponent },
             { path: 'create-vendor', component: CreateVendorComponent },
             { path: 'create-depot', component: CreateDepotComponent },
-        
-        
-        
-           
-
             // {
             //     path: 'batch-details/:clientBatchReference',
             //     component: BatchDetailsComponent,
