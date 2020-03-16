@@ -31,6 +31,8 @@ import {CreateWardComponent} from './views/wards/create-ward/create-ward.compone
 import {CreateBuyerComponent} from './views/buyers/create-buyer/create-buyer.component';
 import {CreateVendorComponent} from './views/vendors/create-vendor/create-vendor.component';
 import {CreateDepotComponent} from './views/depots/create-depot/create-depot.component';
+import { CreateAddressProofTypeComponent } from './_views/addressProofTypes/create-address-proof-type/create-address-proof-type.component';
+import { AddressProofTypesComponent } from './_views/addressProofTypes/address-proof-types.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full', },
@@ -59,6 +61,7 @@ export const routes: Routes = [
             { path: 'crop-grades', component: CropGradesComponent },
             { path: 'crop-varieties', component: CropVarietyComponent },
             { path: 'address-types', component: AddressTypesComponent },
+            { path: 'address-proof-types', component: AddressProofTypesComponent },
             { path: 'id-types', component: IdTypesComponent },
             { path: 'create-province', component: CreateProvinceComponent },
             { path: 'create-crop', component: CreateCropComponent },
@@ -67,6 +70,7 @@ export const routes: Routes = [
             { path: 'create-crop-variety', component: CreateCropVarietyComponent },
             { path: 'create-id-type', component: CreateIdTypeComponent },
             { path: 'create-address-type', component: CreateAddressTypeComponent },
+            { path: 'create-address-proof-type', component: CreateAddressProofTypeComponent },
             { path: 'create-town', component: CreateTownComponent },
             { path: 'create-occupation', component: CreateOccupationComponent },
             { path: 'create-district', component: CreateDistrictComponent },

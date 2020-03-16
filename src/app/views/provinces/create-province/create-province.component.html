@@ -21,6 +21,8 @@
                         <label class="control-label" for="countryId">Country</label>
                         <select class="form-control" id="countryId" name="countryId" formControlName="countryId">
                             <option>-- Select Country --</option>
+                            <option>South Africa</option>
+                            <option>Zimbabwe</option>
                             <option *ngFor="let country of countries" class="form-control" value={{country.id}}>
                                 {{country.name}}
                             </option>

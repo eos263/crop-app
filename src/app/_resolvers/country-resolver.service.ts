@@ -10,6 +10,7 @@ import { Country } from '../_models/country';
 export class CountryResolver  implements Resolve<Country[]> {
 
     constructor(
+        private _router: Router,
         private countryService: CountryService
     ) { }
 

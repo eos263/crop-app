@@ -8,9 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class AddressTypeService {
 
-  addresstypes: AddressType[] = [
-        {id: 235253, name: 'qwerty'}
-    ];
+  addresstypes: AddressType[] = [];
     // baseUrl = environment.apiUrl + 'addresstypes';
 
     constructor(private httpClient: HttpClient) {

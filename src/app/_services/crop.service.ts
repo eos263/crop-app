@@ -1,34 +1,31 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment.prod';
 import {HttpClient} from '@angular/common/http';
-import {Province} from '../_models/province';
+import {Crop} from '../_models/crop';
 import {Observable, of} from 'rxjs';
 import {map} from 'rxjs/operators';
-import { Crop } from '../_models/crop';
 
 @Injectable({ providedIn: 'root' })
 export class CropService {
 
-    crops: Crop[] = [
-        {id: 10,  name: 'Crop 1'}
-    ];
-    // baseUrl = environment.apiUrl + 'provinces';
+    crops: Crop[] = [];
+    // baseUrl = environment.apiUrl + 'crop';
 
     constructor(private httpClient: HttpClient) {
     }
 
     findAll(): Observable<Crop[]> {
-        // return this.httpClient.get<Province[]>(this.baseUrl).pipe(
-        //     map(provinces => {
-        //         return provinces;
+        // return this.httpClient.get<Crop[]>(this.baseUrl).pipe(
+        //     map(crops => {
+        //         return crops;
         //     })
         // );
         return of(this.crops);
     }
 
-    save(province: Province): Observable<Crop> {
-        // return this.httpClient.post<Province>(this.baseUrl, province);
-        this.crops.push(province);
-        return of(province);
+    save(crop: Crop): Observable<Crop> {
+        // return this.httpClient.post<Crop>(this.baseUrl, crop);
+        this.crops.push(crop);
+        return of(crop);
     }
 }

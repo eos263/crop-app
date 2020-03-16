@@ -8,9 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class WardService {
 
-  wards: Ward[] = [
-        {id: 3, wardNo: '30WE', districtId: 2, townId: 2, provinceId: 2, countryId: 2}
-    ];
+  wards: Ward[] = [];
     // baseUrl = environment.apiUrl + 'wards';
 
     constructor(private httpClient: HttpClient) {
@@ -26,7 +24,7 @@ export class WardService {
     }
 
     save(ward: Ward): Observable<Ward> {
-        // return this.httpClient.post<Province>(this.baseUrl, ward);
+        // return this.httpClient.post<Ward>(this.baseUrl, ward);
         this.wards.push(ward);
         return of(ward);
     }

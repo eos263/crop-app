@@ -23,8 +23,9 @@ export const navItems = [
     { name: 'Towns', url: '/towns', icon: 'fa fa-tasks'},
     { name: 'Wards', url: '/wards', icon: 'fa fa-tasks'},
     { name: 'Occupations', url: '/occupations', icon: 'fa fa-tasks'},
-    { name: 'CropVarieties', url: '/crop-varieties', icon: 'fa fa-tasks'},
-    { name: 'CropGrades', url: '/crop-grades', icon: 'fa fa-tasks'},
-    { name: 'AddressTypes', url: '/address-types', icon: 'fa fa-tasks'},
-    { name: 'IdTypes', url: '/id-types', icon: 'fa fa-tasks'},
+    { name: 'Crop Varieties', url: '/crop-varieties', icon: 'fa fa-tasks'},
+    { name: 'Crop Grades', url: '/crop-grades', icon: 'fa fa-tasks'},
+    { name: 'Address Types', url: '/address-types', icon: 'fa fa-tasks'},
+    { name: 'Address Proof Types', url: '/address-proof-types', icon: 'fa fa-tasks'},
+    { name: 'Id Types', url: '/id-types', icon: 'fa fa-tasks'},
 ];

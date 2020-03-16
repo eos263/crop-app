@@ -8,9 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class OccupationService {
 
-    occupations: Occupation[] = [
-        {id: 235253, name: 'wtweqt'}
-    ];
+    occupations: Occupation[] = [];
     // baseUrl = environment.apiUrl + 'occupations';
 
     constructor(private httpClient: HttpClient) {
@@ -26,7 +24,7 @@ export class OccupationService {
     }
 
     save(occupation: Occupation): Observable<Occupation> {
-        // return this.httpClient.post<Province>(this.baseUrl, occupation);
+        // return this.httpClient.post<Occupation>(this.baseUrl, occupation);
         this.occupations.push(occupation);
         return of(occupation);
     }

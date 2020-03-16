@@ -12,24 +12,24 @@ export class CreateAddressTypeComponent implements OnInit {
   addressTypeForm: FormGroup;
   addresstypes: AddressType[] = [];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { 
+  }
 
   ngOnInit() {
     this.createAddressTypeForm();
   }
 
   createAddressTypeForm(){
-this.addressTypeForm = this.formBuilder.group({
-name:['']
-});
+    this.addressTypeForm = this.formBuilder.group({
+      name:['']
+    });
   }
 
-submit(){
-const addressType: AddressType = new AddressType();
-addressType.name = this.addressTypeForm.value.name;
-this.addresstypes.push(addressType);
+  submit(){
+    const addressType: AddressType = new AddressType();
+    addressType.name = this.addressTypeForm.value.name;
+    this.addresstypes.push(addressType);
 
-
-console.log(this.addresstypes);
-}
+    console.log(this.addresstypes);
+  }
 }

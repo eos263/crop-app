@@ -8,9 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class IdTypesService {
 
-    idtypes: IdTypes[] = [
-        {id: 20, name: 'BN886074'}
-    ];
+    idtypes: IdTypes[] = [];
     // baseUrl = environment.apiUrl + 'idtypes';
 
     constructor(private httpClient: HttpClient) {

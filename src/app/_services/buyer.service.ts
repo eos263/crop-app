@@ -8,20 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class BuyerService {
 
-  buyers: Buyer[] = [
-        { id: 1,
-          buyerName: 'Shazz',
-          TelNo: 8888999,
-          incorpRegNo: 2009,
-          Email: 'vshaz@gmail.com',
-          contactPersonName: 'shazz',
-          accNo: 2034890,
-          idNo: '05117915A05',
-          physicalAddress: '3 Twiza Rd',
-          bankName: 'Nedbank',
-          idType: 'National ID',
-          addressProofType: 'Physical Address',}
-    ];
+  buyers: Buyer[] = [];
     // baseUrl = environment.apiUrl + 'buyers';
 
     constructor(private httpClient: HttpClient) {

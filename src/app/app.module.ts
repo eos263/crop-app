@@ -41,6 +41,7 @@ import {ProvincesComponent} from './views/provinces/provinces.component';
 import {CreateCountryComponent} from './views/countries/create-country/create-country.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CountriesModule} from './views/countries/countries.module';
+
 // import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
@@ -69,7 +70,7 @@ import {CountriesModule} from './views/countries/countries.module';
     ],
     declarations: [
         AppComponent,
-        ...APP_CONTAINERS
+        ...APP_CONTAINERS,
     ],
     providers: [
         {

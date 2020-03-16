@@ -8,9 +8,7 @@ import {Depot} from '../_models/depot';
 @Injectable({ providedIn: 'root' })
 export class DepotService {
 
-  depots: Depot[] = [
-        {id: 235253, name: 'wtweqt', districtId: 2}
-    ];
+  depots: Depot[] = [];
     // baseUrl = environment.apiUrl + 'depots';
 
     constructor(private httpClient: HttpClient) {

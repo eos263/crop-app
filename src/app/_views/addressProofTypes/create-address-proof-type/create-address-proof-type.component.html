@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">
+        <i class="fa fa-pencil-square-o"></i> <strong>Add Address proof </strong>
+    </div>
+    <div [hidden]="addressProofTypeAdded">
+        <form [formGroup]="addressProofTypeForm" (ngSubmit)="submit()">
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group required col-md-6">
+                        <label class="control-label" for="name">Address Type Proof</label>
+                        <select class="form-control" id="name" name="name" formControlName="name">
+                            <option>-- Select Type --</option>
+                            <option>Electricity Bill</option>
+                            <option>Rates</option>
+                            <option>Offer Letter</option>
+                            <option>Affidavit</option>
+                            <option *ngFor="let addressprooftype of addressprooftypes" class="form-control" value={{addressprooftype.id}}>
+                                {{addressprooftype.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="addressProofTypeForm.get('name').touched && addressProofTypeForm.get('name').hasError('required')"
+                             class="invalid-feedback">
+                            Address Proof is required
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------------------------------------------------------------------------------------------------->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-square" [disabled]="!addressProofTypeForm.valid">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>&nbsp;
+                    <button type="reset" class="btn btn-danger btn-square"><i class="fa fa-ban"></i> Reset</button>
+                    <button type="reset" class="btn btn-secondary btn-square float-right" (click)="onBackToList()"><i class="fa fa-arrow-left"></i> Back to List</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div [hidden]="!addressProofTypeAdded">
+        <h5>Address Proof Type was successfully added</h5>
+    </div>
+</div>

@@ -10,6 +10,7 @@ import {Crop} from '../_models/crop';
 export class CropResolver implements Resolve<Crop[]> {
 
   constructor(
+    private _router: Router,
     private cropService: CropService
   ) { }
 

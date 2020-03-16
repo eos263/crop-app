@@ -8,9 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class CropVarietyService {
 
-    cropvarieties: CropVariety[] = [
-        {id: 235253, name: 'wtweqt', cropId: 2}
-    ];
+    cropvarieties: CropVariety[] = [];
     // baseUrl = environment.apiUrl + 'cropvarieties';
 
     constructor(private httpClient: HttpClient) {
